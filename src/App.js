@@ -8,27 +8,25 @@ constructor() {
 super();
 
   this.state = {
-    monsters: [
-      {
-        name: 'Linda',
-        id: 'eke345323'
-      },
-      {
-        name: 'Frank',
-        id: 'emmnde22918323'
-      },
-      {
-        name: 'Jacky',
-        id: 'euewgbde312567623'
-      },
-      {
-        name: 'Beavis',
-        id: 'dgyeb345323'
-      }
-    ]
-   
+    monsters: [],
   };
 }
+
+componentDidMount(){
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((users) => 
+      this.setState(
+        () => {
+          return {monsters: users}
+        },
+        () => {
+          console.log(this.state);
+        }
+      )
+    );
+}
+
   render() {
     return <div className="App">
       {
