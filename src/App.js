@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hi Matthew
+            Hi Matthew test
           </p>
         <button>Change Name</button>
         </header>
